@@ -15,9 +15,6 @@ interface Project   {
 }
 
 export default function PortfolioProject ( project:Project ) {
-  console.log(project)
-
-
     const { back } = useRouter()
     return (
         <>
