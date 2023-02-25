@@ -1,0 +1,39 @@
+@use '/styles/mixings' as *;
+@use '/styles/variables' as *;
+@use '/styles/animations' as *;
+@use '/styles/general.module.scss' as *;
+
+.textareaField {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    &_label {
+        font-size: 14px;
+        margin-bottom: 8px;
+        @include breakpoints(desktop) {
+            font-size: 18px;
+        }  
+        @include breakpoints(largescreens) {
+            font-size: 18px;
+        }
+    }
+    &_textarea {
+        background-color: transparent;
+        padding: 8px 12px 8px 0px;
+        border: none;
+        border-bottom: 1px solid $beige;
+        width: 100%;
+        color:$beige;
+        resize:initial;
+        height: 70px;
+        &:active {
+            border: none;
+            outline: none;
+        }
+        &:focus {
+            border-bottom: 1px solid $beige;
+            outline: none;
+        }
+    }
+}

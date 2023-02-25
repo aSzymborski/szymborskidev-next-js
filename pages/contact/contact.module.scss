@@ -1,0 +1,81 @@
+@use '/styles/mixings' as *;
+@use '/styles/variables' as *;
+@use '/styles/animations' as *;
+@use '/styles/general.module.scss' as *;
+
+.section {
+    width: 100%;
+    padding-bottom: 30px;
+    @include breakpoints(tablet) {
+        max-width: 90%;
+    }
+    @include breakpoints(desktop) {
+        max-width: 50%;
+    }
+    @include breakpoints(largescreens) {
+        max-width: 60%;
+    }
+    &_wrapper {
+        width: 100%;
+        opacity: 0;
+        animation-name: appear;
+        animation-duration: 1.4s;
+        animation-delay: 0.4s;
+        animation-fill-mode: forwards;
+        @include breakpoints(desktop) {
+            width: 50%;
+        }  
+        @include breakpoints(largescreens) {
+            width: 50%;
+        }
+    }
+    &_title {
+        font-size: 12vh;
+        margin-bottom: 48px;
+        opacity: 0;
+        animation-name: appear;
+        animation-duration: 1.4s;
+        animation-delay: 0.3s;
+        animation-fill-mode: forwards;
+        &__span {
+            opacity: 0;
+            animation-name: appear;
+            animation-duration: 1.4s;
+            animation-delay: 0.4s;
+            animation-fill-mode: forwards;
+        }
+        @include breakpoints(tablet) {
+            font-size: 10vh;
+        } 
+        @include breakpoints(desktop) {
+            font-size: 15vh;
+        }  
+        @include breakpoints(largescreens) {
+            font-size: 20vh;
+        }
+    }
+    &_text{
+        margin-bottom:24px;
+        font-size: 14px;
+        word-break:normal;
+        line-height: 26px;
+         @include breakpoints(desktop) {
+            font-size: 18px;
+          }  
+          @include breakpoints(largescreens) {
+            font-size: 18px;
+          }
+        &__href {
+            color:$beige;
+            margin-left: 5px;
+        }
+    }
+    &_button {
+        width: 50%;
+        background-color:transparent;
+        color: $beige;
+        border:1px solid $beige;
+        padding:8px 12px;
+        cursor: pointer;
+    }
+}

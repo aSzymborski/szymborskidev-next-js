@@ -1,0 +1,34 @@
+@use '/styles/mixings' as *;
+@use '/styles/variables' as *;
+@use '/styles/animations' as *;
+@use '/styles/general.module.scss' as *;
+
+    .footer {
+        position:absolute;
+        bottom:1rem;
+        left:0;
+        z-index: 0;
+        &_wrapper {
+            display: none;
+            opacity: 0;
+            animation-name: appear;
+            animation-duration: 1.4s;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+            &__email {
+                color:$beige;
+                font-size: 14px;
+                margin-left: 0.6rem;
+            }
+            @include breakpoints(desktop) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+             }  
+             @include breakpoints(largescreens) {
+                display: flex;
+                align-items: center;
+                justify-content: left;
+             }
+        }
+    }

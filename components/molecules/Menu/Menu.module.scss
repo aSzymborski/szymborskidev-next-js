@@ -1,0 +1,11 @@
+@use '/styles/mixings' as *;
+@use '/styles/variables' as *;
+@use '/styles/animations' as *;
+@use '/styles/general.module.scss' as *;
+
+.menu {
+    &_hamburgerBtnWrapper{
+        position: relative;
+        z-index: 2;
+    }
+}

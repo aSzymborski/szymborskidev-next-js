@@ -1,0 +1,64 @@
+@use '/styles/mixings' as *;
+@use '/styles/variables' as *;
+@use '/styles/animations' as *;
+@use '/styles/general.module.scss' as *;
+
+.section {
+    width: 100%;
+    padding-bottom: 30px;
+    @include breakpoints(tablet) {
+        max-width: 90%;
+    }
+    @include breakpoints(desktop) {
+        max-width: 50%;
+    }
+    @include breakpoints(largescreens) {
+        max-width: 60%;
+    }
+    &_title {
+        font-size: 12vh;
+        margin-bottom: 48px;
+        opacity: 0;
+        animation-name: appear;
+        animation-duration: 1.4s;
+        animation-delay: 0.3s;
+        animation-fill-mode: forwards;
+        &__span {
+            opacity: 0;
+            animation-name: appear;
+            animation-duration: 1.4s;
+            animation-delay: 0.4s;
+            animation-fill-mode: forwards;
+        }
+        @include breakpoints(tablet) {
+            font-size: 10vh;
+        } 
+        @include breakpoints(desktop) {
+            font-size: 15vh;
+        }  
+        @include breakpoints(largescreens) {
+            font-size: 20vh;
+        }
+    }
+    &_text{
+        font-size: 20px;
+        color:$beige;
+        opacity: 0;
+        animation-name: appear;
+        animation-duration: 1.4s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+         @include breakpoints(desktop) {
+            font-size: 24px;
+          }  
+          @include breakpoints(largescreens) {
+            font-size: 28px;
+          }
+        p {
+            margin-bottom:16px;
+        }  
+        &__href {
+            color:$beige;
+        }
+    }
+}

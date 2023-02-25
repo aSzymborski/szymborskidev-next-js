@@ -1,0 +1,35 @@
+@use '/styles/mixings' as *;
+@use '/styles/variables' as *;
+
+.container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include breakpoints(tablet) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    @include breakpoints(desktop) {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+    @include breakpoints(largescreens) {
+      padding-left: 8rem;
+      padding-right: 8rem;
+    }
+}
+.effectZoom {
+  transition: transform .2s;
+  &:hover {
+    transform: scale(1.030);
+  }
+}
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid $beige;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: 
+    typing 2.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}

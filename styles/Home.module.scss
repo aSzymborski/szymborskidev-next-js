@@ -1,0 +1,74 @@
+@use '/styles/mixings' as *;
+@use '/styles/variables' as *;
+@use '/styles/animations' as *;
+@use '/styles/general.module.scss' as *;
+
+.animatedTitle{
+  position: relative;
+  width:100%;
+  opacity: 0;
+  animation-name: appear;
+  animation-duration: 1.4s;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+  @include breakpoints(desktop) {
+      width:50%;
+  }  
+  @include breakpoints(largescreens) {
+      width:50%;
+  }
+}
+.animatedTitle> div {
+  overflow: hidden;
+}
+.animatedTitle> div div {
+  font-size: 20px;
+  padding: 2vh 0;
+  color:$beige;
+  @include breakpoints(desktop) {
+    font-size: 22px;
+  }  
+  @include breakpoints(largescreens) {
+    font-size: 22px;
+  }
+}
+.animatedTitle> div div span {
+  display: block;
+  font-size: 30px;
+  color:$beige;
+  @include breakpoints(desktop) {
+    font-size: 38px;
+  }  
+  @include breakpoints(largescreens) {
+    font-size: 38px;
+  }
+}
+.animatedTitle> div div span:first-child {
+    font-size: 12vh;
+    font-weight: 700;
+    color:white;
+    @include breakpoints(tablet) {
+        font-size: 15vh;
+} 
+    @include breakpoints(desktop) {
+        font-size: 20vh;
+    }  
+    @include breakpoints(largescreens) {
+        font-size: 25vh;
+    }
+  }
+.animatedTitle> div.textTop {
+  border-bottom: 3px solid $beige;
+}
+.animatedTitle> div.textTop div {
+  animation: showTopText 1s;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
+  transform: translate(0, 100%);
+}
+.animatedTitle> div.textBottom div {
+  animation: showBottomText 0.6s;
+  animation-delay: 1.75s;
+  animation-fill-mode: forwards;
+  transform: translate(0, -100%);
+}
