@@ -72,3 +72,25 @@
   animation-fill-mode: forwards;
   transform: translate(0, -100%);
 }
+.backgroundImage {
+  position: absolute;
+  bottom:-15%;
+  left: 0;
+  right: 0;
+  margin-left:auto;
+  margin-right: auto;
+  width: 50vh;
+  height: 100%;
+  @include breakpoints(desktop) {
+    top:0;
+    right: 15%;
+    left: initial;
+    margin:0;
+  }  
+  @include breakpoints(largescreens) {
+    top:0;
+    right: 15%;
+    left: initial;
+    margin:0;
+  }
+}

@@ -1,6 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import Footer from '@/components/organisms/Footer/Footer'
 import styles from '@/styles/Home.module.scss'
+import Image from 'next/image'
+import keyboard from 'assets/keyboard_1.svg'
 
 export default function Home() {
 
@@ -19,6 +21,7 @@ export default function Home() {
             <div>Frontend developer based in Warsaw</div>
           </div>
       </div>
+      <Image className={styles.backgroundImage} src={keyboard} alt="keyboard"/>
      </section>
     </main>
     <Footer/>
