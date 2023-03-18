@@ -49,6 +49,7 @@
         p{
             margin-bottom:24px;
             font-size: 14px; 
+            word-break: break-word;
              @include breakpoints(desktop) {
                 font-size: 18px;
               }  
@@ -60,10 +61,7 @@
 }
 
 .backgroundImage {
-    position: absolute;
-    bottom:-15%;
-    left: 0;
-    right: 0;
+    position: relative;
     margin-left:auto;
     margin-right: auto;
     height: auto;
@@ -75,12 +73,16 @@
     animation-fill-mode: forwards;
     filter: grayscale(80%);
     @include breakpoints(desktop) {
+      position: absolute;
+      top:15%;
       right: 0;
       left: initial;
       margin:0;
       width: 100vh;
     }  
     @include breakpoints(largescreens) {
+      position: absolute;
+      top:15%;
       right:0;
       left: initial;
       margin:0;
