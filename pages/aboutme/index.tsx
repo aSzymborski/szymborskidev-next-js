@@ -1,5 +1,7 @@
 import axios from 'axios';
 import styles from '@/pages/aboutme/aboutme.module.scss'
+import me from 'assets/me.webp'
+import Image from 'next/image';
 
 interface AboutItem {
   header:string
@@ -25,6 +27,7 @@ export default function AboutMe({  aboutMeData }: Props) {
             <p>{item.skills}</p>
           </div>
         )):null}
+        <Image className={styles.backgroundImage} src={me} alt="me"/>
      </section>
     </main>
     </>
