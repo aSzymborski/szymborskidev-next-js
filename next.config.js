@@ -6,6 +6,9 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  env: {
+    DATO_CMS_KEY: process.env.DATO_CMS_KEY,
+  },
 }
 
 module.exports = nextConfig
