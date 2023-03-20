@@ -8,6 +8,7 @@ const nextConfig = {
   },
   env: {
     DATO_CMS_KEY: process.env.DATO_CMS_KEY,
+    NEXT_PUBLIC_GOOGLE_ANALYTICS: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
   },
 }
 
