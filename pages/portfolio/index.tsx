@@ -2,7 +2,9 @@ import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/pages/portfolio/Portfolio.module.scss'
-import { useEffect } from 'react';
+import Head from 'next/head'
+
+
 
 interface Project   {
     id:string
@@ -17,6 +19,10 @@ export default function Portfolio ( { projects } :Props ) {
 
     return (
         <> 
+            <Head>
+              <title>Portfolio - SzymborskiDev</title>
+              <meta property="og:title" content="Portfolio SzymborskiDev" key="title" />
+            </Head>
             <main className={`${styles.main} ${styles.container}`}>
             <section className={styles.section}>
                 <h1 className={styles.section_title}>Portfolio</h1>
@@ -36,7 +42,6 @@ export default function Portfolio ( { projects } :Props ) {
 }
 
 
-const token = '231d61a5e5c34c98cec972da3f2d5d'
 export const getServerSideProps = async () => {
   try {
     const { data } = await axios.post(
@@ -55,7 +60,7 @@ export const getServerSideProps = async () => {
       },
       {
         headers: {
-          authorization: `Bearer ${token}`,
+          authorization: `Bearer ${process.env.DATO_CMS_KEY}`,
         },
       }
     );

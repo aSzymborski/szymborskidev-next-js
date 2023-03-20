@@ -3,25 +3,24 @@ import Footer from '@/components/organisms/Footer/Footer'
 import styles from '@/styles/Home.module.scss'
 import Image from 'next/image'
 import keyboard from 'assets/keyboard_1.svg'
+import Head from 'next/head'
 
 export default function Home() {
 
   return (
     <>
+    <Head>
+      <title>SzymborskiDev</title>
+      <meta property="og:title" content="SzymborskiDev" key="title" />
+    </Head>
     <main className={`${styles.container}`}>
       <section className={styles.section}>
-        <div className={styles.animatedTitle}>
-          <div className={styles.textTop}>
-            <div>
-              <span className={styles.typewriter}>Hello</span>
-              <span>I'm Adrian</span>
-            </div>
-          </div>
-          <div className={styles.textBottom}>
-            <div>Frontend developer based in Warsaw</div>
-          </div>
-      </div>
-      <Image className={styles.backgroundImage} src={keyboard} alt="keyboard"/>
+        <div className={styles.titleWrapper}>
+        <p>Hello</p>
+        <p>I'm Adrian</p>
+        <p>Frontend developer based in  Warsaw</p>
+        </div>
+       <Image className={styles.backgroundImage} src={keyboard} alt="keyboard"/>
      </section>
     </main>
     <Footer/>

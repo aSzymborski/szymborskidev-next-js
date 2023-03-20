@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from '@/pages/portfolio/PortfolioProject.module.scss'
+import Head from 'next/head'
 
 interface Project   {
   id:string
@@ -18,6 +19,10 @@ export default function PortfolioProject ( project:Project ) {
     const { back } = useRouter()
     return (
         <>
+          <Head>
+           <title>{project.title} SzymborskiDev</title>
+           <meta property="og:title" content="Portfolio SzymborskiDev" key="title" />
+         </Head>
          <main className={`${styles.main} ${styles.container}`}>
           <section className={styles.section}>
             <h1 className={styles.section_title}>{project.title}</h1>
@@ -58,7 +63,6 @@ export default function PortfolioProject ( project:Project ) {
 
 export const getServerSideProps = async (context: { params: { title: string } })=> {
     const { title } = context.params;
-    const token = '231d61a5e5c34c98cec972da3f2d5d'
 
     try {
         const { data } = await axios.post(
@@ -84,7 +88,7 @@ export const getServerSideProps = async (context: { params: { title: string } })
           },
           {
             headers: {
-              authorization: `Bearer ${token}`,
+              authorization: `Bearer ${process.env.DATO_CMS_KEY}`,
             },
           }
         );

@@ -3,6 +3,7 @@ import FormField from '@/components/molecules/FormField/FormField'
 import TextareaField from '@/components/molecules/TextareaField/TextareaField'
 import { useRouter } from 'next/router'
 import styles from '@/pages/contact/contact.module.scss'
+import Head from 'next/head'
 
 export default function Contact() {
     const router = useRouter()
@@ -13,6 +14,10 @@ export default function Contact() {
     }
     return (
         <>
+        <Head>
+          <title>Contact SzymborskiDev</title>
+          <meta property="og:title" content="Contact SzymborskiDev" key="title" />
+        </Head>
         <main className={`${styles.main} ${styles.container}`}>
             <section className={styles.section}>
                 <h1 className={styles.section_title}>Let's <span className={styles.section_title__span}>talk</span></h1>

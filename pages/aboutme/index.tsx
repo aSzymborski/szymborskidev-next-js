@@ -2,6 +2,7 @@ import axios from 'axios';
 import styles from '@/pages/aboutme/aboutme.module.scss'
 import me from 'assets/me.webp'
 import Image from 'next/image';
+import Head from 'next/head'
 
 interface AboutItem {
   header:string
@@ -17,6 +18,10 @@ type Props = {
 export default function AboutMe({  aboutMeData }: Props) {
   return (
     <>
+    <Head>
+      <title>About Me - SzymborskiDev</title>
+      <meta property="og:title" content="About Me SzymborskiDev" key="title" />
+    </Head>
     <main className={`${styles.main} ${styles.container}`}>
       <section className={styles.section}>
         <h1 className={styles.section_title}>About <span className={styles.section_title__span}>Me</span></h1>
@@ -35,7 +40,6 @@ export default function AboutMe({  aboutMeData }: Props) {
 }
 
 export const getServerSideProps = async ()=> {
-  const token = '231d61a5e5c34c98cec972da3f2d5d'
   try {
       const { data } = await axios.post(
         'https://graphql.datocms.com/',
@@ -52,7 +56,7 @@ export const getServerSideProps = async ()=> {
         },
         {
           headers: {
-            authorization: `Bearer ${token}`,
+            authorization: `Bearer ${process.env.DATO_CMS_KEY}`,
           },
         }
       );
