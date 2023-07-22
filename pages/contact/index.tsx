@@ -48,18 +48,13 @@ export default function Contact() {
             <p className={styles.section_text}>
               Get in touch via the form below, or by emailing
               <a
-                href="mailto:hello@szymborskidev.com"
+                href="mailto:asz93@icloud.com"
                 className={`${styles.section_text__href} ${styles.effectZoom}`}
               >
-                hello@szymborskidev.com
+                asz93@icloud.com
               </a>
             </p>
-            <form
-              className={styles.form}
-              onSubmit={handleSubmit}
-              action="https://formsubmit.co/b0c4221f22988ead5c93182cd8fab0d2"
-              method="POST"
-            >
+            <form className={styles.form} onSubmit={handleSubmit} method="POST">
               <input type="hidden" name="_subject" value="New email!" />
               <input type="hidden" name="_captcha" value="false" />
               <input
