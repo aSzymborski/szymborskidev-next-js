@@ -1,0 +1,27 @@
+@use '/styles/mixings' as *;
+@use '/styles/variables' as *;
+@use '/styles/animations' as *;
+@use '/styles/general.module.scss' as *;
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+
+    @include breakpoints(desktop) {
+        padding: 0.5rem 3rem;
+    }
+
+    &_homeBtn {
+        font-size: 20px;
+        font-weight: 400;
+        z-index: 2;
+
+        &__span {
+            color: $black;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+}

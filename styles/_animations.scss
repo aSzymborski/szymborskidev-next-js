@@ -1,64 +1,105 @@
 @use '/styles/variables' as *;
 
 @keyframes appear {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 0;
   }
-  @keyframes appearDown {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
+
+  100% {
+    opacity: 1;
   }
-  @keyframes openRight {
-    0% {
-      transform: translateX(100%) rotate(0deg);
-    }
-    100% {
-      transform: translateX(0%) rotate(0deg);
-    }
+}
+
+@keyframes appearDown {
+  0% {
+    opacity: 1;
   }
-  @keyframes showTopText {
-    0% { transform: translate3d(0, 100%, 0); }
-    40%, 60% { transform: translate3d(0, 50%, 0); }
-    100% { transform: translate3d(0, 0, 0); }
+
+  100% {
+    opacity: 0;
   }
-  @keyframes showBottomText {
-    0% { transform: translate3d(0, -100%, 0); }
-    100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes openRight {
+  0% {
+    transform: translateX(100%) rotate(0deg);
   }
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+
+  100% {
+    transform: translateX(0%) rotate(0deg);
   }
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: $beige }
+}
+
+@keyframes showTopText {
+  0% {
+    transform: translate3d(0, 100%, 0);
   }
-  @keyframes type {
+
+  40%,
+  60% {
+    transform: translate3d(0, 50%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes showBottomText {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: $black
+  }
+}
+
+@keyframes type {
   0% {
     width: 0;
   }
+
   99.9% {
-    border-right: .15em solid $beige;
+    border-right: .15em solid $black;
   }
+
   100% {
     border: none;
   }
 }
+
 @-webkit-keyframes type {
   0% {
     width: 0;
   }
+
   99.9% {
-    border-right: .15em solid $beige;
+    border-right: .15em solid $black;
   }
+
   100% {
     border: none;
   }
@@ -68,12 +109,15 @@
   0% {
     width: 0;
   }
+
   1% {
     opacity: 1;
   }
+
   99.9% {
-    border-right: .15em solid $beige;
+    border-right: .15em solid $black;
   }
+
   100% {
     opacity: 1;
     border: none;
@@ -84,12 +128,15 @@
   0% {
     width: 0;
   }
+
   1% {
     opacity: 1;
   }
+
   99.9% {
     border-right: .15em solid orange;
   }
+
   100% {
     opacity: 1;
     border: none;
@@ -100,9 +147,11 @@
   0% {
     width: 0;
   }
+
   1% {
     opacity: 1;
   }
+
   100% {
     opacity: 1;
   }
@@ -112,9 +161,11 @@
   0% {
     width: 0;
   }
+
   1% {
     opacity: 1;
   }
+
   100% {
     opacity: 1;
   }
@@ -125,6 +176,7 @@
     border-color: transparent;
   }
 }
+
 @-webkit-keyframes blink {
   50% {
     border-color: tranparent;
