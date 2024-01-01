@@ -2,22 +2,39 @@
 import styles from './aboutmeSection.module.scss'
 import me from 'assets/me.webp'
 import Image from 'next/image';
+import Link from 'next/link';
+import { GoChevronDown } from 'react-icons/go';
 
 
 export default function AboutmeSection() {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    let hrefTarget = e.currentTarget.href;
+    e.preventDefault();
+    setTimeout(() => {
+        const href = hrefTarget;
+        const targetId = href.replace(/.*\#/, '');
+        const elem = document.getElementById(targetId);
+        elem?.scrollIntoView({
+            behavior: 'smooth',
+        });
+    }, 200);
+};
 
   return (
     <>
-      <section id='aboutme_section' className={styles.section}>
-        <p className={styles.section_subtitle}>A little</p>
-        <h1 className={styles.section_title}>About me</h1>
+      <section id='aboutme_section' className={`${styles.section} ${styles.container}`}>
+        <div className={styles.wrapper}>
+        <h1 className={styles.section_title}>A little about me</h1>
         <div className={styles.section_textWrapper}>
           <p>Skilled in JavaScript/Next.js/React/Angular/Scss/Bootstrap/Express.js/ and the rest of the tools you need to write better, cleaner code.</p>
           <p>Programming has become my passion for which I devote every free moment. I also interested in old motorization, and more precisely - motorcycles.</p>
         </div>
-
-        <div>
+        <div className={styles.imageWrapper}>
           <Image className={styles.backgroundImage} src={me} alt="me" />
+        </div>
+        </div>
+        <div className={styles.footerNav}>
+        <Link className={`${styles.effectZoom} ${styles.whiteHrefBtn} `} href="#works_section" onClick={handleScroll} >Explore my work <GoChevronDown size={30} /></Link>
         </div>
       </section>
     </>

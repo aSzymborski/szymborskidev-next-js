@@ -2,8 +2,7 @@
 import { useEffect, useState } from 'react';
 import styles from './homeSection.module.scss'
 import Link from 'next/link';
-import arrowicon from 'assets/arrow icon.svg'
-import Image from 'next/image';
+import { GoChevronDown } from "react-icons/go";
 
 export default function HomeSection() {
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -40,21 +39,26 @@ export default function HomeSection() {
 
     return (
         <>
-            <section className={styles.homeSection}>
+            <section id="home_section"className={`${styles.homeSection} ${styles.container}`}>
+                <div className={styles.wrapper}>
                 <div className={styles.leftBox}>
-                    <div>
-                        <p className={`${styles.title}`}><span className={`${styles.bold}`}>Hello</span> I'm Adrian<br /> frontend developer </p>
-                    </div>
-                    <div className={styles.timeWrapper}>
-                        <p><span className={styles.bold}>based in Warsaw</span></p>
-                        <p>{formatDate(currentDate)}</p>
-                    </div>
                 </div>
                 <div className={styles.rightBox}>
-                    <p className={styles.text}>Creative and independent Front-End Developer with two years of experience building stable apps and websites in fast-paced. I am self-taught.</p>
-                    <Link className={`${styles.effectZoom} ${styles.whiteHrefBtn} `} href="#aboutme_section" onClick={handleScroll} >More about me <Image src={arrowicon} alt='arrowicon' /></Link>
+                    <h1 className={styles.title}>Creative and independent Front-End Developer based in Warsaw </h1>
+                    <div className={styles.timeWrapper}>
+                        <p>{formatDate(currentDate)}</p>
+                    </div>
+                    <p className={styles.text}>with two years of experience building stable apps and websites in fast-paced. I am self-taught.</p>
+                    <Link className={`${styles.effectZoom} ${styles.whiteHrefBtn} `} href="#aboutme_section" onClick={handleScroll} >More about me <GoChevronDown size={30} /></Link>
                 </div>
-            </section></>
+                </div>
+                <div className={styles.footerNav}>
+                    <Link href="https://www.linkedin.com/in/adrian-szymborski-116366149" target='_blank'>Linkedin</Link>
+                    <Link href="https://www.instagram.com/szymborski_a/" target='_blank'>Instagram</Link>
+                    <Link href="https://github.com/aSzymborski/" target='_blank'>GitHub</Link>
+                </div>
+            </section>
+        </>
     )
 }
 

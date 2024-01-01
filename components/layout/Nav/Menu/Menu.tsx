@@ -12,7 +12,7 @@ export default function Menu(props: Props) {
     <>
       <menu className={styles.menu}>
         <div className={styles.menu_hamburgerBtnWrapper}>
-          <Hamburger toggled={props.isOpen} toggle={props.toggle} />
+          <Hamburger toggled={props.isOpen} toggle={props.toggle} size={40} />
         </div>
         <MenuList isOpen={props.isOpen} toggle={props.toggle} />
       </menu>

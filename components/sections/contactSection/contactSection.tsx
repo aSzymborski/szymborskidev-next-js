@@ -6,6 +6,8 @@ import styles from "./contactSection.module.scss";
 import arrowicon from 'assets/arrow icon.svg'
 import { useState } from "react";
 import Image from "next/image";
+import { FaAngleRight } from "react-icons/fa6";
+
 
 export default function ContactSection() {
   const [fullname, setFullname] = useState("");
@@ -38,8 +40,7 @@ export default function ContactSection() {
   };
   return (
     <>
-      <section id='contact_section' className={styles.section}>
-        <p className={styles.section_subtitle}>Contact</p>
+      <section id='contact_section' className={`${styles.section} ${styles.container}`}>
         <h1 className={styles.section_title}>
           Let's talk about your project
         </h1>
@@ -94,7 +95,7 @@ export default function ContactSection() {
               className={`${styles.section_button} ${styles.effectZoom}`}
             >
               Submit
-              <Image src={arrowicon} alt='arrowicon' />
+              <FaAngleRight />
             </button>
             {error ? <span className={styles.errorText}>Something went wrong, use a different contact method.</span> : null}
           </form>

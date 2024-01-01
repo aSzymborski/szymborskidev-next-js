@@ -56,7 +56,7 @@ export default function MenuList(props: Props) {
                     </li>
                 )) : null}
                 <li className={`${styles.menuList_item} ${styles.effectZoom}`}>
-                    <a href="https://github.com">GITHUB</a>
+                    <a href="https://github.com/aSzymborski">GITHUB</a>
                     <span className={styles.menuList_item__description}>see me github</span>
                 </li>
             </ul>

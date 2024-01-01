@@ -1,9 +1,8 @@
 import axios from 'axios';
-import Image from 'next/image';
-import Link from 'next/link';
 import styles from './workSection.module.scss'
 import { useEffect, useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation'
+import HorizontalScrollCarousel from '@/components/elements/HorizontalScrollCarousel/HorizonstalScrollCarousel';
+import ColumnScrollCarousel from '@/components/elements/ColumnScrollCarousel/ColumnScrollCarousel';
 
 interface Project {
   id: string
@@ -13,20 +12,23 @@ interface Project {
 
 export default function WorkSection() {
   const [data, setData] = useState<Array<Project>>([])
-
-  const pathname = usePathname()
-  const router = useRouter()
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     getData()
-    handleReturnToHomePage()
   }, [])
 
-  const handleReturnToHomePage = () => {
-    if (pathname === '/works') {
-      router.push('/')
-    }
-  }
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.matchMedia('(max-width: 1199px)').matches);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const getData = async () => {
     try {
@@ -46,7 +48,7 @@ export default function WorkSection() {
         },
         {
           headers: {
-            authorization: `Bearer ${process.env.DATO_CMS_KEY}`,
+            authorization: `Bearer 231d61a5e5c34c98cec972da3f2d5d`,
           },
         }
       );
@@ -60,17 +62,7 @@ export default function WorkSection() {
   return (
     <>
       <section id='works_section' className={styles.section}>
-        <p className={styles.section_subtitle}>Work</p>
-        <h1 className={styles.section_title}>See some of my works</h1>
-        <ul className={styles.portfolio}>
-          {data ? data.map(({ id, photo, title }) => (
-            <Link key={id} href={`/works/${title.toLowerCase().replace(/\s/g, '')}`}>
-              <li className={styles.portfolio_item}>
-                <Image className={styles.portfolio_item__image} unoptimized src={photo.url} alt="photo" width={100} height={100} />
-              </li>
-            </Link>
-          )) : null}
-        </ul>
+        {isMobile ? <ColumnScrollCarousel data={data} /> : <HorizontalScrollCarousel data={data} /> }
       </section>
     </>
   )

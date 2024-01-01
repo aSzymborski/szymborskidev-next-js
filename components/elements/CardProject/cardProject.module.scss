@@ -1,0 +1,38 @@
+@use '/styles/mixings' as *;
+@use '/styles/variables' as *;
+@use '/styles/animations' as *;
+@use '/styles/general.module.scss' as *;
+
+.overlay {
+    z-index: 2;
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(transparent,rgba(0,0,0,.94));
+    position: absolute;
+    top: auto;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+.mobileView {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+.projectDescription {
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    color:white;
+    @include breakpoints(desktop) {
+        padding: 2.5rem;
+    }
+    .title {
+        font-size: 1rem;
+        @include breakpoints(desktop) {
+            font-size: 3.5rem;
+        }
+
+    }
+}

@@ -16,7 +16,7 @@ export default function Home() {
         <title>SzymborskiDev | Frontend Developer</title>
         <meta property="og:title" content="SzymborskiDev" key="FrontendDeveloper" />
       </Head>
-      <main className={`${styles.container}`}>
+      <main>
         <HomeSection />
         <AboutmeSection />
         <WorkSection />

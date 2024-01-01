@@ -7,22 +7,31 @@
     width: 100%;
     position: relative;
     height: 100%;
-    margin-bottom: 60px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:2rem;
+    justify-content: space-between; 
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     @include breakpoints(desktop) {
         height: 100vh;
-        margin-bottom: 90px;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
-
-
-    &_title {
-        font-size: 4vh;
-        margin-bottom: 48px;
-        font-weight: 700;
-
+    .wrapper {
+        display: grid;
+        grid-template-rows: auto;
+        grid-gap: 10px;
+        grid-template-columns: 100%;
         @include breakpoints(desktop) {
-            font-size: 6vh;
+            grid-template-columns: 20% 60% 20%;
         }
+    }
+    &_title {
+        font-size: 20px;
+        margin-bottom: 48px;
+        font-weight: 400;
     }
 
     &_subtitle {
@@ -37,37 +46,49 @@
 
 
     &_textWrapper {
-        padding-bottom: 1rem;
-        width: 100%;
-
-        @include breakpoints(desktop) {
-            width: 60%;
-        }
-
         p {
-            margin-bottom: 24px;
-            font-size: 16px;
+            font-size: 28px;
             word-break: break-word;
-
+            line-height: 1.2;
             @include breakpoints(desktop) {
-                font-size: 20px;
+                font-size: 32px;
             }
 
         }
     }
+    .footerNav  {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    .whiteHrefBtn {
+        text-decoration: none;
+        font-size: 16px;
+        padding: 1rem 2rem;
+        background-color: white;
+        position: relative;
+        display: flex;
+        align-items: center;
+        border: 0;
+        cursor: pointer;
+        width: 100%;
+        @include breakpoints(desktop) {
+            width: initial;
+        }
+    }
 }
 
-.backgroundImage {
-    position: absolute;
-    top: 0;
-    right: 0;
-    filter: grayscale(70%);
+.imageWrapper {
+    border-radius: 50%;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+    padding: 3px;
     width: 100%;
-    height: auto;
-    display: none;
-
-    @include breakpoints(desktop) {
-        display: block;
-        width: 50%;
+    .backgroundImage {
+        filter: grayscale(100%);
+        width:100%;
+        height: auto;
     }
 }

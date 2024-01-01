@@ -2,22 +2,18 @@
 @use '/styles/variables' as *;
 
 .container {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 1rem 1rem;
 
   @include breakpoints(tablet) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 1rem 1.5rem;
   }
 
   @include breakpoints(desktop) {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 1.5rem 3rem;
   }
 
   @include breakpoints(largescreens) {
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding: 3rem 3rem;
   }
 }
 

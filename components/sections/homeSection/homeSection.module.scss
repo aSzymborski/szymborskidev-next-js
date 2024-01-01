@@ -5,83 +5,74 @@
 
 .homeSection {
   display: flex;
-
   flex-direction: column;
-  padding-top: 12rem;
-  gap: 2rem;
   height: 100vh;
-
-  @include breakpoints(desktop) {
-    justify-content: space-between;
-    flex-direction: row;
-  }
-
-  .leftBox {
-    width: 100%;
-
-    @include breakpoints(desktop) {
-      width: 60%;
-    }
-  }
-
-  .rightBox {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    @include breakpoints(desktop) {
-      width: 40%;
-    }
-
-    .text {
-      line-height: 150%;
-      font-size: 18px;
-      margin-bottom: 2rem;
-    }
-  }
-
-  .title {
-    font-size: 5vh;
-    line-height: 6vh;
-    margin-bottom: 2rem;
-
-
-    @include breakpoints(desktop) {
-      font-size: 10vh;
-      line-height: 12vh;
-      margin-bottom: 0s;
-    }
-  }
-
+  background-color: #1a1a1a;
+  color:$primary-gray;
   .bold {
     font-weight: 700;
   }
-
-  .timeWrapper {
-    display: flex;
-    flex-direction: column;
-  }
-
   .whiteHrefBtn {
     text-decoration: none;
     font-size: 16px;
     padding: 1rem 2rem;
-    background-color: white;
-    position: relative;
+    background-color: #1a1a1a;
+    color:$primary-gray;
+    border: 1px solid $primary-gray;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    @include breakpoints(desktop) {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  }
+  .leftBox {
     width: 100%;
-
-    &:hover {
-      &::after {
-        content: '';
-        width: 10px;
-        height: 100%;
-        background-color: black;
-        position: absolute;
-        top: 0;
-        left: 0;
+  }
+  .rightBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    .title {
+      font-size:38px;
+      line-height: .95;
+      font-weight: 400;
+      max-width: 12em;
+      @include breakpoints(desktop) {
+        max-width: 12em;
       }
+    }
+    .text {
+      font-size: 1em;
+      margin-bottom: 2rem;
+      @include breakpoints(desktop) {
+        max-width: 25em;
+      }
+    }
+    .timeWrapper {
+      display: flex;
+      flex-direction: column;
+      font-size: 2em;
+      margin: 8px 0;
+    }
+  }
+  .footerNav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap:2rem;
+    a {
+      color:white;
+      text-transform: uppercase;
     }
   }
 }
