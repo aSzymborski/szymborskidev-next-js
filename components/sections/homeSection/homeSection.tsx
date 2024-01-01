@@ -56,6 +56,7 @@ export default function HomeSection() {
                     <Link href="https://www.linkedin.com/in/adrian-szymborski-116366149" target='_blank'>Linkedin</Link>
                     <Link href="https://www.instagram.com/szymborski_a/" target='_blank'>Instagram</Link>
                     <Link href="https://github.com/aSzymborski/" target='_blank'>GitHub</Link>
+                    <Link href="mailto:asz93@icloud.com">let's talk</Link>
                 </div>
             </section>
         </>

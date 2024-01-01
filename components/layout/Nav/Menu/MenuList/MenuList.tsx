@@ -27,7 +27,7 @@ export default function MenuList(props: Props) {
         {
             redirect: '#contact_section',
             text: 'CONTACT',
-            description: 'yes, we have email and phone'
+            description: 'yes, we have email and form contact'
         },
     ]
 
