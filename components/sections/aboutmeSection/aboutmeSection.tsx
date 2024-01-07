@@ -22,7 +22,7 @@ export default function AboutmeSection() {
 
   return (
     <>
-      <section id='aboutme_section' className={`${styles.section} ${styles.container}`}>
+      <section id='aboutme_section' className={`${styles.section}`}>
         <div className={styles.wrapper}>
         <h1 className={styles.section_title}>A little about me</h1>
         <div className={styles.section_textWrapper}>

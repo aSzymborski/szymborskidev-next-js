@@ -9,10 +9,15 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+    padding: 3rem 1rem;
     @include breakpoints(desktop) {
+        padding: 6rem 8rem;
         flex-direction: row;
         justify-content: space-between;
     }
+    @include breakpoints(largescreens) {
+        padding: 12rem 14rem;
+      }
     &_title {
         font-size: 20px;
         margin-bottom: 48px;
