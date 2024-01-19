@@ -1,25 +1,26 @@
-@use '/styles/mixings' as *;
-@use '/styles/variables' as *;
+@use "/styles/mixings" as *;
+@use "/styles/variables" as *;
 
 .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    @include breakpoints(tablet) {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-    @include breakpoints(desktop) {
-      padding-left: 5rem;
-      padding-right: 5rem;
-    }
-    @include breakpoints(largescreens) {
-      padding-left: 8rem;
-      padding-right: 8rem;
-    }
+  padding: 1rem 1rem;
+
+  @include breakpoints(tablet) {
+    padding: 1rem 1.5rem;
+  }
+
+  @include breakpoints(desktop) {
+    padding: 1.5rem 3rem;
+  }
+
+  @include breakpoints(largescreens) {
+    padding: 3rem 3rem;
+  }
 }
+
 .effectZoom {
-  transition: transform .2s;
+  transition: transform 0.2s;
+
   &:hover {
-    transform: scale(1.030);
+    transform: scale(1.03);
   }
 }

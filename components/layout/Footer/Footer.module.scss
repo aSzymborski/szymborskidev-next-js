@@ -1,0 +1,65 @@
+@use "/styles/mixings" as *;
+@use "/styles/variables" as *;
+@use "/styles/animations" as *;
+@use "/styles/general.module.scss" as *;
+
+.footer {
+  color: $white;
+  width: 100%;
+  background-color: $primary-black;
+  text-transform: uppercase;
+
+  &_createWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+
+    &__text {
+      font-size: 4vh;
+      font-weight: 700;
+
+      @include breakpoints(desktop) {
+        font-size: 20vh;
+      }
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  &_rightsWrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    padding: 1rem 0;
+    font-size: 14px;
+    font-weight: 600;
+    @include breakpoints(desktop) {
+      flex-direction: row;
+      font-size: 16px;
+    }
+    .box {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      justify-content: flex-start;
+      @include breakpoints(desktop) {
+        justify-content: center;
+        &:first-child {
+          justify-content: flex-start;
+        }
+        &:last-child {
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    a {
+      color: $white;
+    }
+  }
+}
