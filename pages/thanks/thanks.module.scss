@@ -8,6 +8,9 @@
   height: 100vh;
   background-color: $primary-black;
   color: $white;
+  .container {
+    height: 100%;
+  }
   .box {
     display: flex;
     flex-direction: column;
