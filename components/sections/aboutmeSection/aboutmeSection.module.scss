@@ -85,6 +85,10 @@
   position: relative;
   padding: 3px;
   width: 100%;
+  margin: 3rem 0;
+  @include breakpoints(desktop) {
+    marigin: 0;
+  }
   .backgroundImage {
     filter: grayscale(100%);
     width: 100%;
