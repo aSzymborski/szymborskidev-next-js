@@ -1,12 +1,8 @@
-@use '/styles/mixings' as *;
-@use '/styles/variables' as *;
-@use '/styles/animations' as *;
-@use '/styles/general.module.scss' as *;
+@use "/styles/mixings" as *;
+@use "/styles/variables" as *;
+@use "/styles/animations" as *;
+@use "/styles/general.module.scss" as *;
 
 .section {
-    height: 100%;
+  height: 100%;
 }
-
-
-
-

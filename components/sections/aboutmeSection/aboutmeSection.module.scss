@@ -1,95 +1,93 @@
-@use '/styles/mixings' as *;
-@use '/styles/variables' as *;
-@use '/styles/animations' as *;
-@use '/styles/general.module.scss' as *;
+@use "/styles/mixings" as *;
+@use "/styles/variables" as *;
+@use "/styles/animations" as *;
+@use "/styles/general.module.scss" as *;
 
 .section {
-    width: 100%;
-    position: relative;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap:2rem;
-    justify-content: space-between; 
-    padding: 3rem 1rem;
+  width: 100%;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 3rem 1rem;
+  @include breakpoints(desktop) {
+    height: 100vh;
+    padding: 6rem 8rem;
+  }
+  @include breakpoints(largescreens) {
+    padding: 12rem 14rem;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    grid-template-columns: 100%;
     @include breakpoints(desktop) {
-        height: 100vh;
-        padding: 6rem 8rem;
+      grid-template-columns: 20% 60% 20%;
     }
-    @include breakpoints(largescreens) {
-        padding: 12rem 14rem;
+  }
+  &_title {
+    font-size: 20px;
+    margin-bottom: 48px;
+    font-weight: 400;
+  }
+
+  &_subtitle {
+    font-size: 2vh;
+    font-weight: 400;
+    margin-bottom: 8px;
+
+    @include breakpoints(desktop) {
+      font-size: 2.5vh;
+    }
+  }
+
+  &_textWrapper {
+    p {
+      font-size: 22px;
+      word-break: break-word;
+      line-height: 1.2;
+      @include breakpoints(desktop) {
+        font-size: 32px;
       }
-    .wrapper {
-        display: grid;
-        grid-template-rows: auto;
-        grid-gap: 10px;
-        grid-template-columns: 100%;
-        @include breakpoints(desktop) {
-            grid-template-columns: 20% 60% 20%;
-        }
     }
-    &_title {
-        font-size: 20px;
-        margin-bottom: 48px;
-        font-weight: 400;
+  }
+  .footerNav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .whiteHrefBtn {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 1rem 2rem;
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    width: 100%;
+    @include breakpoints(desktop) {
+      width: initial;
     }
-
-    &_subtitle {
-        font-size: 2vh;
-        font-weight: 400;
-        margin-bottom: 8px;
-
-        @include breakpoints(desktop) {
-            font-size: 2.5vh;
-        }
-    }
-
-
-    &_textWrapper {
-        p {
-            font-size: 28px;
-            word-break: break-word;
-            line-height: 1.2;
-            @include breakpoints(desktop) {
-                font-size: 32px;
-            }
-
-        }
-    }
-    .footerNav  {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        width: 100%;
-    }
-    .whiteHrefBtn {
-        text-decoration: none;
-        font-size: 16px;
-        padding: 1rem 2rem;
-        background-color: white;
-        position: relative;
-        display: flex;
-        align-items: center;
-        border: 0;
-        cursor: pointer;
-        width: 100%;
-        @include breakpoints(desktop) {
-            width: initial;
-        }
-    }
+  }
 }
 
 .imageWrapper {
-    border-radius: 50%;
-    background-color: black;
-    overflow: hidden;
-    position: relative;
-    padding: 3px;
+  border-radius: 50%;
+  background-color: black;
+  overflow: hidden;
+  position: relative;
+  padding: 3px;
+  width: 100%;
+  .backgroundImage {
+    filter: grayscale(100%);
     width: 100%;
-    .backgroundImage {
-        filter: grayscale(100%);
-        width:100%;
-        height: auto;
-    }
+    height: auto;
+  }
 }

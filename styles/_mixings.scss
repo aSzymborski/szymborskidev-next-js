@@ -3,21 +3,15 @@
     @media (min-width: 320px) {
       @content;
     }
-  }
-
-  @else if ($point ==tablet) {
+  } @else if ($point ==tablet) {
     @media (min-width: 768px) {
       @content;
     }
-  }
-
-  @else if ($point ==desktop) {
+  } @else if ($point ==desktop) {
     @media (min-width: 1200px) {
       @content;
     }
-  }
-
-  @else if ($point ==largescreens) {
+  } @else if ($point ==largescreens) {
     @media (min-width: 1800px) {
       @content;
     }

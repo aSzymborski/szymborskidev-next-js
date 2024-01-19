@@ -3,11 +3,9 @@ import FormField from "@/components/elements/fields/FormField/FormField";
 import TextareaField from "@/components/elements/fields/TextareaField/TextareaField";
 import { useRouter } from "next/router";
 import styles from "./contactSection.module.scss";
-import arrowicon from 'assets/arrow icon.svg'
 import { useState } from "react";
-import Image from "next/image";
 import { FaAngleRight } from "react-icons/fa6";
-
+import { useAppContext } from "@/context/appContext";
 
 export default function ContactSection() {
   const [fullname, setFullname] = useState("");
@@ -15,6 +13,13 @@ export default function ContactSection() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
   const router = useRouter();
+  const { setAppCursorText, setAppTextColor, setOuterScale } = useAppContext();
+
+  const handleMouseEnter = () => {
+    setAppCursorText("");
+    setAppTextColor("");
+    setOuterScale(5);
+  };
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -33,24 +38,28 @@ export default function ContactSection() {
     const { error } = await res.json();
     if (error) {
       console.log(error);
-      setError(true)
+      setError(true);
       return;
     }
     router.push("thanks");
   };
   return (
     <>
-      <section id='contact_section' className={`${styles.section} ${styles.container}`}>
-        <h1 className={styles.section_title}>
-          Let's talk about your project
-        </h1>
+      <section
+        id="contact_section"
+        className={`${styles.section} ${styles.container}`}
+        onMouseEnter={handleMouseEnter}
+      >
+        <h1 className={styles.section_title}>Let's talk about your project</h1>
         <div className={styles.section_wrapper}>
           <p className={styles.section_wrapper__text}>
             Get in touch via the form below, or by emailing
             <a
               href="mailto:asz93@icloud.com"
               className={`${styles.effectZoom}`}
-            > asz93@icloud.com
+            >
+              {" "}
+              asz93@icloud.com
             </a>
           </p>
           <form className={styles.form} onSubmit={handleSubmit} method="POST">
@@ -97,7 +106,11 @@ export default function ContactSection() {
               Submit
               <FaAngleRight />
             </button>
-            {error ? <span className={styles.errorText}>Something went wrong, use a different contact method.</span> : null}
+            {error ? (
+              <span className={styles.errorText}>
+                Something went wrong, use a different contact method.
+              </span>
+            ) : null}
           </form>
         </div>
       </section>

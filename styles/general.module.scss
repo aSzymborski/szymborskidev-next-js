@@ -1,5 +1,5 @@
-@use '/styles/mixings' as *;
-@use '/styles/variables' as *;
+@use "/styles/mixings" as *;
+@use "/styles/variables" as *;
 
 .container {
   padding: 1rem 1rem;
@@ -18,9 +18,9 @@
 }
 
 .effectZoom {
-  transition: transform .2s;
+  transition: transform 0.2s;
 
   &:hover {
-    transform: scale(1.030);
+    transform: scale(1.03);
   }
 }

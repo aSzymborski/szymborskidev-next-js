@@ -1,10 +1,10 @@
-import { Pivot as Hamburger } from 'hamburger-react'
-import MenuList from './MenuList/MenuList'
-import styles from './Menu.module.scss'
+import { Pivot as Hamburger } from "hamburger-react";
+import MenuList from "./MenuList/MenuList";
+import styles from "./Menu.module.scss";
 
 interface Props {
-  isOpen: boolean
-  toggle: React.Dispatch<React.SetStateAction<boolean>>
+  isOpen: boolean;
+  toggle: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function Menu(props: Props) {
@@ -17,5 +17,5 @@ export default function Menu(props: Props) {
         <MenuList isOpen={props.isOpen} toggle={props.toggle} />
       </menu>
     </>
-  )
+  );
 }

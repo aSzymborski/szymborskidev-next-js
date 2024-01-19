@@ -1,35 +1,35 @@
-@use '/styles/mixings' as *;
-@use '/styles/variables' as *;
-@use '/styles/animations' as *;
-@use '/styles/general.module.scss' as *;
+@use "/styles/mixings" as *;
+@use "/styles/variables" as *;
+@use "/styles/animations" as *;
+@use "/styles/general.module.scss" as *;
 
 .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1rem;
-    background-color: #1a1a1a;
-    color:$primary-gray;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    @include breakpoints(desktop) {
-        padding: 3rem 3rem;
-    }
-    a {
-        color:$primary-gray;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  background-color: $primary-black;
+  color: $primary-gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include breakpoints(desktop) {
+    padding: 3rem 3rem;
+  }
+  a {
+    color: $primary-gray;
+  }
 
-    &_homeBtn {
-        font-size: 28px;
-        font-weight: 400;
-        z-index: 2;
+  &_homeBtn {
+    font-size: 28px;
+    font-weight: 400;
+    z-index: 2;
 
-        &__span {
-            color:$primary-gray;
-            font-size: 28px;
-            font-weight: 700;
-        }
+    &__span {
+      color: $primary-gray;
+      font-size: 28px;
+      font-weight: 700;
     }
+  }
 }
