@@ -62,7 +62,7 @@ export default function HomeSection() {
               <p>{formatDate(currentDate)}</p>
             </div>
             <p className={styles.text}>
-              with three years of experience building stable apps and websites
+              with five years of experience building stable apps and websites
               in fast-paced. I am self-taught.
             </p>
             <Link
